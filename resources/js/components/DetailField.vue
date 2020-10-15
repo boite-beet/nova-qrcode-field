@@ -13,7 +13,7 @@
         <p class="qr-text-value" v-if="field.showText && !field.textAsAnchor">
           {{ this.field.text }}
         </p>
-        <a :href="this.field.text" v-if="field.showText && field.textAsAnchor">
+        <a :href="this.field.text" class="qr-text-value" v-if="field.showText && field.textAsAnchor">
           {{ this.field.text }}
         </a>
       </div>
@@ -35,7 +35,7 @@ export default {
 }
 
 .qr-text-value {
-  margin-left: .5rem;
+  margin-left: 1rem;
 }
 
 .qr-item img {
