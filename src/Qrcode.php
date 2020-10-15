@@ -1,6 +1,6 @@
 <?php
 
-namespace Kristories\Qrcode;
+namespace BoiteBeet\Qrcode;
 
 use Cache;
 use Laravel\Nova\Fields\Field;
