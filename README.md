@@ -7,7 +7,7 @@ A Laravel Nova field to generate QR Code.
 You can install the Nova field in to a [Laravel](http://laravel.com) app that uses [Nova](http://nova.laravel.com) via composer :
 
 ```cli
-composer require kristories/nova-qrcode-field
+composer require boitebeet/nova-qrcode-field
 ```
 
 ## Usage

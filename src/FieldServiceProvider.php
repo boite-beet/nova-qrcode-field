@@ -1,6 +1,6 @@
 <?php
 
-namespace Kristories\Qrcode;
+namespace BoiteBeet\Qrcode;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;

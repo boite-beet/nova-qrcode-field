@@ -1,5 +1,5 @@
 {
-    "name": "kristories/nova-qrcode-field",
+    "name": "boitebeet/nova-qrcode-field",
     "description": "Nova QR code field",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Kristories\\Qrcode\\": "src/"
+            "BoiteBeet\\Qrcode\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Kristories\\Qrcode\\FieldServiceProvider"
+                "BoiteBeet\\Qrcode\\FieldServiceProvider"
             ]
         }
     },

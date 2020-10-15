@@ -1,6 +1,6 @@
 <?php
 
-namespace Kristories\Qrcode;
+namespace BoiteBeet\Qrcode;
 
 use Cache;
 use Laravel\Nova\Fields\Field;
@@ -13,10 +13,11 @@ class Qrcode extends Field
      * @var string
      */
     public $component = 'qrcode';
-    
-    
-    public function __construct()
+
+
+    public function __construct($name)
     {
+        parent::__construct($name);
         $this->exceptOnForms()
              ->indexSize(50)
              ->detailSize(200);
@@ -48,11 +49,16 @@ class Qrcode extends Field
         return $this->withMeta(['detailSize' => $size]);
     }
 
+    public function showText($asAnchor = false)
+    {
+        return $this->withMeta(['showText' => true, 'textAsAnchor' => $asAnchor]);
+    }
+
     protected function _renderImage($url = null)
     {
         if ($url and curl_init($url)) {
             $image = Cache::rememberForever('qr-img-' . md5($url), function () use ($url) {
-                $image     = file_get_contents($url);
+                $image = file_get_contents($url);
                 $file_info = new \finfo(FILEINFO_MIME_TYPE);
                 $mime_type = $file_info->buffer($image);
 
