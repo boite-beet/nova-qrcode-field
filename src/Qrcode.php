@@ -15,8 +15,9 @@ class Qrcode extends Field
     public $component = 'qrcode';
     
     
-    public function __construct()
+    public function __construct($name)
     {
+        parent::__construct($name);
         $this->exceptOnForms()
              ->indexSize(50)
              ->detailSize(200);
@@ -46,6 +47,11 @@ class Qrcode extends Field
     public function detailSize(int $size)
     {
         return $this->withMeta(['detailSize' => $size]);
+    }
+
+    public function showText($value = true)
+    {
+        return $this->withMeta(['showText' => $value]);
     }
 
     protected function _renderImage($url = null)

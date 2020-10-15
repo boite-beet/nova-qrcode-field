@@ -1,15 +1,20 @@
 <template>
     <panel-item :field="field">
-        <p slot="value">
-            <vue-qr 
-                class="qr-item" 
-                :text="this.field.text" 
-                :size="this.field.detailSize"
-                :bgSrc="this.field.background"
-                :logoSrc="this.field.logo"
+      <template slot="value">
+        <div class="qr-wrapper">
+            <vue-qr
+                class="qr-item"
+                :text="field.text"
+                :size="field.detailSize"
+                :bgSrc="field.background"
+                :logoSrc="field.logo"
                 :margin="0"
             ></vue-qr>
-        </p>
+            <p class="qr-text-value" v-if="field.showText">
+              {{this.field.text}}
+            </p>
+        </div>
+      </template>
     </panel-item>
 </template>
 
@@ -20,6 +25,16 @@ export default {
 </script>
 
 <style>
+.qr-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.qr-text-value {
+  margin-left: .5rem;
+}
+
 .qr-item img{
     border: solid thin #ddd;
     padding: 5px;
